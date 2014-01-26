@@ -1,0 +1,11 @@
+irb(main):013:0> br = Brewery.create name:"BrewDog", year:2007
+irb(main):015:0> br.beers.create name:"Punk IPA", style:"IPA"
+irb(main):016:0> br.beers.create name:"Nanny State", style:"Iowalcohol"
+irb(main):018:0> punk = br.beers.first
+irb(main):020:0> punk.ratings.create score:25
+irb(main):021:0> punk.ratings.create score:30
+irb(main):022:0> nanny = br.beers.find_by name:"Nanny State"
+irb(main):024:0> nanny.ratings.create score:22
+irb(main):025:0> nanny.ratings.create score:18
+irb(main):026:0> nanny.ratings.create score:27
+
