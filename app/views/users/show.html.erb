@@ -22,6 +22,15 @@
   </li>
   <% end %>
 </ul>
+<% if not @user.favorite_beer.nil? %>
+    <strong>Favorite beer:</strong> <%= @user.favorite_beer %> <br>
+<% end %>
+<% if not @user.favorite_style.nil? %>
+    <strong>Favorite style:</strong> <%= @user.favorite_style %> <br>
+<% end %>
+<% if not @user.favorite_brewery.nil? %>
+    <strong>Favorite brewery:</strong> <%= @user.favorite_brewery %> <br>
+<% end %>
 </p>
 <%= link_to 'Back', users_path %> |
 <% if @user == current_user %>
