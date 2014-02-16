@@ -1,3 +1,0 @@
-== README
-
-url: http://arcane-oasis-8355.herokuapp.com/breweries
