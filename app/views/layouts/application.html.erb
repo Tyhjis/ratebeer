@@ -11,8 +11,10 @@
   <%= link_to 'breweries', breweries_path %>
   <%= link_to 'beers', beers_path %>
   <%= link_to 'ratings', ratings_path %>
+  <%= link_to 'search beer places', places_path %>
   <%= link_to 'users', users_path %> <strong> | </strong>
   <%= link_to 'list of beer clubs', beer_clubs_path %>
+
   <% if not current_user.nil? %>
       <%= link_to current_user.username, user_path(current_user) %>
       <%= link_to 'rate a beer', new_rating_path %>

@@ -21,6 +21,7 @@ group :test do
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'launchy'
+  gem 'webmock'
 end
 # Use SCSS for stylesheets 
 gem 'sass-rails', '~> 4.0.0'
@@ -54,6 +55,10 @@ gem 'byebug', group: [:development, :test]
 gem 'bcrypt-ruby', '~> 3.1.2'
 
 gem 'simplecov', require: false
+
+gem 'httparty'
+
+gem "rails-settings-cached", "0.3.1"
 
 # Use unicorn as the app server
 # gem 'unicorn'
