@@ -53,6 +53,8 @@ gem 'byebug', group: [:development, :test]
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.1.2'
 
+gem 'simplecov', require: false
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

@@ -1,24 +1,29 @@
 require 'spec_helper'
-include OwnTestHelper
 
 describe "Beer" do
-  let!(:brewery){ FactoryGirl.create :brewery, name:"Koff" }
+  let!(:brewery) { FactoryGirl.create :brewery, name:"Koff" }
 
-  it "is added when given correct credentials" do
-    add_beer(beer_name:'Kalia')
-    expect {
-    click_button('Create Beer')
-    }.to change{Beer.count}.by(1)
-    #puts page.html
+  before :each do
+    FactoryGirl.create :user
+    sign_in(username:"Pekka", password:"Foobar1")
   end
 
-  it "shows error message when given incorrect credentials" do
-    add_beer(beer_name:'')
-    expect {
+  it "is created when a valid name given" do
+    visit new_beer_path
+    fill_in('beer_name', with:'Arrogant Bastard Ale')
+
+    expect{
+      click_button('Create Beer')
+    }.to change{Beer.count}.by(1)
+  end
+
+  it "is not created with invalid name" do
+    visit new_beer_path
+
+    expect{
       click_button('Create Beer')
     }.to change{Beer.count}.by(0)
-
-    expect(page).to have_content 'error prohibited'
+    expect(page).to have_content "Name can't be blank"
+    expect(page).to have_content "New beer"
   end
-
 end
